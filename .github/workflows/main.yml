@@ -18,6 +18,6 @@ jobs:
 
       - name: ping sso
         run: |
-          ping dev.common-sso.justice.gov.bc.ca
+          ping sso-dev-e27db1-dev.apps.gold.devops.gov.bc.ca
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
