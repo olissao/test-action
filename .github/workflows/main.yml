@@ -1,0 +1,23 @@
+name: Client Secret
+
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+      - edited
+
+jobs:
+  
+  comment-on-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ping sso
+        run: |
+          ping dev.common-sso.justice.gov.bc.ca
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
